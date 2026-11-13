@@ -1,0 +1,53 @@
+name: Fehler melden / Bug report
+description: Etwas funktioniert nicht wie erwartet / Something doesn’t work
+labels: ["bug"]
+body:
+  - type: textarea
+    id: was
+    attributes:
+      label: Was ist passiert? / What happened?
+      description: Was haben Sie gemacht, was haben Sie erwartet, was ist stattdessen passiert?
+    validations:
+      required: true
+  - type: input
+    id: tb
+    attributes:
+      label: Thunderbird-Version
+      description: ☰ → Hilfe → Über Thunderbird
+      placeholder: z. B. 140.5.0esr
+    validations:
+      required: true
+  - type: input
+    id: addon
+    attributes:
+      label: TeamKalender-Version
+      description: ⚙ Einstellungen (unten in der Liste)
+      placeholder: z. B. 0.9.0
+    validations:
+      required: true
+  - type: dropdown
+    id: server
+    attributes:
+      label: Kalenderserver / Calendar server
+      options:
+        - Nextcloud
+        - Mailcow / SOGo
+        - Anderer CalDAV-Server / Other CalDAV
+        - Lokaler Kalender / Local calendar
+        - Weiß nicht / Don’t know
+  - type: dropdown
+    id: os
+    attributes:
+      label: Betriebssystem / Operating system
+      options: [Windows, Linux, macOS]
+  - type: textarea
+    id: log
+    attributes:
+      label: Fehlermeldung / Error message
+      description: Falls vorhanden – Add-ons debuggen → TeamKalender → Untersuchen → Konsole (rote Zeilen). Bitte keine privaten Termindaten einfügen.
+      render: text
+  - type: textarea
+    id: screens
+    attributes:
+      label: Screenshots
+      description: Gerne mit Testterminen statt echten Terminen.

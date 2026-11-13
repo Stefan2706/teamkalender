@@ -1,0 +1,318 @@
+[
+  {
+    "namespace": "sbsCalendar",
+    "functions": [
+      {
+        "name": "getCalendars",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "getItems",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarIds",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rangeStart",
+            "type": "string"
+          },
+          {
+            "name": "rangeEnd",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "openItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "createItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "type": "string"
+          },
+          {
+            "name": "end",
+            "type": "string"
+          },
+          {
+            "name": "prefill",
+            "type": "object",
+            "optional": true,
+            "properties": {
+              "title": {
+                "type": "string",
+                "optional": true
+              },
+              "location": {
+                "type": "string",
+                "optional": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "moveItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          },
+          {
+            "name": "targetCalendarId",
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "type": "string"
+          },
+          {
+            "name": "end",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "copyItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          },
+          {
+            "name": "targetCalendarId",
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "type": "string"
+          },
+          {
+            "name": "end",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "addItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "type": "string"
+          },
+          {
+            "name": "end",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "location",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "setTheme",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "enabled",
+            "type": "boolean"
+          },
+          {
+            "name": "options",
+            "type": "object",
+            "optional": true,
+            "properties": {
+              "categoryColors": {
+                "type": "boolean",
+                "optional": true
+              },
+              "tint": {
+                "type": "string",
+                "optional": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "undo",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "redo",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "getCategories",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "openCalendarWizard",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "getItemDetails",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "deleteItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "updateItem",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "type": "string"
+          },
+          {
+            "name": "recurrenceId",
+            "type": "string"
+          },
+          {
+            "name": "changes",
+            "type": "object",
+            "properties": {
+              "showAs": {
+                "type": "string",
+                "optional": true
+              },
+              "privacy": {
+                "type": "boolean",
+                "optional": true
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "optional": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "hideTabToolbar",
+        "type": "function",
+        "async": true,
+        "parameters": []
+      }
+    ],
+    "events": [
+      {
+        "name": "onChanged",
+        "type": "function",
+        "parameters": []
+      }
+    ]
+  }
+]

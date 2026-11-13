@@ -1,0 +1,286 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ * TeamKalender – (c) Stefan Scherer, ts-scherer.com */
+/* Outlook-Design für den Thunderbird-Kalender
+ * Wird vom Add-on „TeamKalender“ als Autoren-Stylesheet in das
+ * Thunderbird-Hauptfenster geladen. Alle Regeln sind auf #view-box beschränkt,
+ * damit nur der Kalender betroffen ist. */
+
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+:root:not(#tsol) {
+  --tsol-accent: light-dark(#0f6cbd, #479ef5);
+  --tsol-bg: light-dark(#ffffff, #1f1f1f);
+  --tsol-off: light-dark(#f7f7f7, #262626);
+  --tsol-line: light-dark(#e1dfdd, #3b3a39);
+  --tsol-line-soft: light-dark(#f0efee, #2d2c2b);
+  --tsol-text: light-dark(#242424, #ececec);
+  --tsol-muted: light-dark(#616161, #adadad);
+  --tsol-now: light-dark(#c4314b, #e86b81);
+  --tsol-tint: 40%;
+  --tsol-font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Ubuntu, "Noto Sans", sans-serif;
+
+  /* Thunderbird-Variablen auf ruhige Outlook-Werte setzen */
+  --viewBackground: var(--tsol-bg) !important;
+  --viewColor: var(--tsol-text) !important;
+  --viewBorderColor: var(--tsol-line) !important;
+  --viewCalendarHeaderBackground: transparent !important;
+  --viewWeekendBackground: var(--tsol-bg) !important;
+  --viewTodayBackground: var(--tsol-bg) !important;
+  --viewTodayWeekendBackground: var(--tsol-bg) !important;
+  --viewTodayOffBackground: var(--tsol-off) !important;
+  --viewOffTimeBackground: var(--tsol-off) !important;
+  --viewMonthDayOffLabelBackground: var(--tsol-off) !important;
+  --viewMonthOtherBackground: var(--tsol-off) !important;
+  --viewMonthDayOtherBackground: var(--tsol-off) !important;
+  --viewDayBoxSelectedBackground: color-mix(in srgb, var(--tsol-accent) 7%, var(--tsol-bg)) !important;
+  --viewDayBoxOffSelectedBackground: color-mix(in srgb, var(--tsol-accent) 7%, var(--tsol-off)) !important;
+  --viewDayBoxOtherSelectedBackground: color-mix(in srgb, var(--tsol-accent) 7%, var(--tsol-off)) !important;
+  --viewHighlightBorderColor: transparent !important;
+  --viewTodayLabelBackground: var(--tsol-accent) !important;
+  --viewTodayLabelColor: #ffffff !important;
+  --viewTimeBoxColor: var(--tsol-muted) !important;
+  --viewMonthDayBoxLabelColor: var(--tsol-text) !important;
+  --viewMonthWeekLabelBackground: transparent !important;
+  --viewDropshadowBackground: var(--tsol-accent) !important;
+  --viewDragboxBackground: var(--tsol-accent) !important;
+}
+
+/* ---------- Grundfläche und Schrift ---------- */
+#view-box {
+  background-color: var(--tsol-bg) !important;
+  font-family: var(--tsol-font);
+  color: var(--tsol-text);
+}
+
+/* ---------- Kopfzeile mit Ansichtsumschalter ---------- */
+#calendarViewHeader .view-header {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+#view-box .calview-toggle {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  gap: 2px;
+}
+#view-box button.calview-toggle-item {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 5px 12px !important;
+  color: var(--tsol-text) !important;
+}
+#view-box button.calview-toggle-item:hover {
+  background: color-mix(in srgb, var(--tsol-text) 7%, transparent) !important;
+}
+#view-box button.calview-toggle-item[aria-selected="true"] {
+  color: var(--tsol-accent) !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 -2px 0 var(--tsol-accent) !important;
+  border-radius: 4px 4px 0 0 !important;
+}
+
+/* ---------- Termine (alle Ansichten) ---------- */
+#view-box .calendar-color-box {
+  background-color: color-mix(in srgb, var(--item-backcolor) var(--tsol-tint), var(--tsol-bg)) !important;
+  color: var(--tsol-text) !important;
+  border: none !important;
+  border-inline-start: 4px solid var(--item-backcolor) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+#view-box .calendar-color-box:hover {
+  background-color: color-mix(in srgb, var(--item-backcolor) calc(var(--tsol-tint) + 12%), var(--tsol-bg)) !important;
+}
+#view-box :is(calendar-event-box, calendar-editable-item, calendar-month-day-box-item)[selected].calendar-color-box {
+  background-color: color-mix(in srgb, var(--item-backcolor) calc(var(--tsol-tint) + 25%), var(--tsol-bg)) !important;
+  color: var(--tsol-text) !important;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.18), inset 0 0 0 1px var(--item-backcolor) !important;
+}
+#view-box calendar-month-day-box calendar-month-day-box-item[allday="true"].calendar-color-box {
+  box-shadow: none !important;
+  background-color: color-mix(in srgb, var(--item-backcolor) calc(var(--tsol-tint) + 10%), var(--tsol-bg)) !important;
+}
+#view-box .calendar-item-flex {
+  padding: 3px 6px !important;
+  gap: 5px !important;
+}
+#view-box .event-name-label {
+  font-weight: 600 !important;
+}
+#view-box .item-time-label {
+  font-weight: 400 !important;
+  color: var(--tsol-muted) !important;
+}
+#view-box .location-desc {
+  opacity: 1 !important;
+  color: var(--tsol-muted) !important;
+  margin: 0 6px 3px !important;
+}
+#view-box .calendar-category-box {
+  inline-size: 3px !important;
+  inset-inline-end: 3px !important;
+}
+
+/* ---------- Tag- und Wochenansicht ---------- */
+#view-box .day-column-heading {
+  justify-content: flex-start !important;
+  padding: 8px 10px 6px !important;
+  font-weight: 400 !important;
+  color: var(--tsol-muted) !important;
+  border-inline: none !important;
+  border-block-end: 1px solid var(--tsol-line) !important;
+}
+#view-box .day-column-today .day-column-heading {
+  color: var(--tsol-accent) !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 3px 0 var(--tsol-accent) !important;
+}
+#view-box .day-column-selected:not(.day-column-today) .day-column-heading {
+  color: var(--tsol-text) !important;
+  font-weight: 600 !important;
+}
+#view-box .multiday-grid:not(.multiday-grid-rotated) .day-column-selected :is(calendar-header-container, .multiday-hour-box, .day-column-heading) {
+  border-inline: none !important;
+}
+#view-box .multiday-hour-box {
+  border-block-end-color: var(--tsol-line-soft) !important;
+}
+#view-box .multiday-timebar .multiday-hour-box {
+  border-color: transparent !important;
+}
+#view-box .multiday-timebar-time {
+  color: var(--tsol-muted) !important;
+  font-size: 0.8rem !important;
+}
+#view-box calendar-event-column {
+  border-inline-start-color: var(--tsol-line) !important;
+}
+#view-box calendar-header-container {
+  border-block-end: 1px solid var(--tsol-line) !important;
+}
+#view-box .timeIndicator {
+  opacity: 1 !important;
+  border-block-start-color: var(--tsol-now) !important;
+}
+#view-box .multiday-timebar-now-indicator {
+  border-color: var(--tsol-now) !important;
+  background-color: var(--tsol-now) !important;
+}
+
+/* ---------- Monatsansicht ---------- */
+#view-box calendar-day-label {
+  background: var(--tsol-bg) !important;
+  color: var(--tsol-muted) !important;
+  padding: 6px 8px !important;
+  border-block-end: 1px solid var(--tsol-line) !important;
+}
+#view-box .calendar-day-label-name {
+  text-align: start !important;
+  font-weight: 400 !important;
+}
+#view-box calendar-day-label[relation="today"] {
+  color: var(--tsol-accent) !important;
+}
+#view-box .calendar-month-day-box-dates {
+  padding: 4px 6px 2px !important;
+  font-size: 0.85rem !important;
+}
+#view-box .calendar-month-day-box-date-label {
+  font-weight: 400 !important;
+}
+#view-box .calendar-month-day-box-other-month .calendar-month-day-box-date-label {
+  color: var(--tsol-muted) !important;
+}
+#view-box .calendar-month-day-box-date-label[relation="today"] {
+  background-color: var(--tsol-accent) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 1000px !important;
+  padding: 1px 7px !important;
+}
+#view-box .calendar-month-day-box-week-label {
+  background: transparent !important;
+  color: var(--tsol-muted) !important;
+  font-weight: 400 !important;
+  padding: 0 !important;
+}
+#view-box :is(.calendar-month-day-box-current-month, .calendar-month-day-box-day-off, .calendar-month-day-box-other-month)[relation="today"] {
+  box-shadow: inset 0 3px 0 var(--tsol-accent) !important;
+}
+#view-box :is(.calendar-month-day-box-current-month, .calendar-month-day-box-day-off, .calendar-month-day-box-other-month)[selected] {
+  border-color: transparent !important;
+  border-inline-start-color: var(--viewBorderColor) !important;
+  border-block-start-color: var(--viewBorderColor) !important;
+}
+#view-box .calendar-month-day-box-list-item {
+  margin: 1px 4px !important;
+}
+#view-box calendar-month-day-box-item .calendar-item-flex {
+  padding: 1px 5px !important;
+  font-size: 0.85rem !important;
+}
+#view-box .calendar-item-list-more-button {
+  color: var(--tsol-accent) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ---------- Tagesköpfe im Outlook-Stil (große Ziffer, Wochentag) ---------- */
+/* Feste Höhe, damit Thunderbirds Höhenmessung zum Inhalt passt */
+#view-box .day-column-heading > span {
+  display: inline-block;
+  block-size: 22px;
+  line-height: 22px;
+  white-space: nowrap;
+}
+#view-box .day-column-heading > span[hidden] {
+  display: none !important;
+}
+#view-box .tsol-num {
+  font-size: 17px;
+  font-weight: 600;
+  margin-inline-end: 6px;
+  color: var(--tsol-text);
+}
+#view-box .tsol-wd {
+  font-size: 12px;
+  color: var(--tsol-muted);
+}
+#view-box .day-column-today :is(.tsol-num, .tsol-wd) {
+  color: var(--tsol-accent);
+}
+
+/* ---------- „Anzeigen als“ ---------- */
+#view-box .calendar-color-box:is([data-tsol-showas="free"]) {
+  background-color: var(--tsol-bg) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--item-backcolor) 70%, transparent) !important;
+}
+#view-box .calendar-color-box:is([data-tsol-showas="tentative"], [status="TENTATIVE"]) {
+  background-image: repeating-linear-gradient(135deg,
+    color-mix(in srgb, var(--item-backcolor) 26%, var(--tsol-bg)) 0 5px,
+    color-mix(in srgb, var(--item-backcolor) 9%, var(--tsol-bg)) 5px 10px) !important;
+}
+#view-box .calendar-color-box[data-tsol-showas="oof"] {
+  background-color: color-mix(in srgb, #8764b8 28%, var(--tsol-bg)) !important;
+  border-inline-start-color: #8764b8 !important;
+}
+
+/* ---------- Farbintensität „Vollfarbe“ (wie die Kalenderliste) ---------- */
+:root[tsol-tint="full"] #view-box .calendar-color-box:not([data-tsol-showas="free"]) {
+  background-color: var(--item-backcolor) !important;
+  color: var(--item-forecolor) !important;
+  border-inline-start-color: color-mix(in srgb, var(--item-backcolor) 70%, black) !important;
+}
+:root[tsol-tint="full"] #view-box .calendar-color-box:not([data-tsol-showas="free"]) :is(.item-time-label, .location-desc) {
+  color: inherit !important;
+  opacity: 0.85;
+}
+:root[tsol-tint="full"] #view-box .calendar-color-box:is([data-tsol-showas="tentative"], [status="TENTATIVE"]) {
+  background-image: repeating-linear-gradient(135deg, transparent 0 5px, rgb(255 255 255 / 0.35) 5px 10px) !important;
+}

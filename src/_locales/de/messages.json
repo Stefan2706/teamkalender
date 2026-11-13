@@ -1,0 +1,387 @@
+{
+  "extensionName": {
+    "message": "TeamKalender"
+  },
+  "extensionDescription": {
+    "message": "Kalender von Kollegen und Räumen nebeneinander, Zeitplan, Freie-Zeit-Finder, Termin-Vorschau und Kalenderdesign wie in Outlook – für Thunderbird mit CalDAV (Nextcloud, Mailcow/SOGo u. a.)."
+  },
+  "actionTitle": {
+    "message": "TeamKalender öffnen"
+  },
+  "actionLabel": {
+    "message": "TeamKalender"
+  },
+  "today": {
+    "message": "Heute"
+  },
+  "prev": {
+    "message": "Zurück"
+  },
+  "next": {
+    "message": "Weiter"
+  },
+  "modeDay": {
+    "message": "Tag"
+  },
+  "modeWorkweek": {
+    "message": "Arbeitswoche"
+  },
+  "modeWeek": {
+    "message": "Woche"
+  },
+  "calendars": {
+    "message": "Kalender auswählen"
+  },
+  "groupNone": {
+    "message": "Gespeicherte Gruppen"
+  },
+  "groupNamePlaceholder": {
+    "message": "Name der Gruppe"
+  },
+  "groupSave": {
+    "message": "Auswahl als Gruppe speichern"
+  },
+  "groupDelete": {
+    "message": "Gruppe löschen"
+  },
+  "groupSaved": {
+    "message": "Gruppe „$NAME$“ gespeichert.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "allDay": {
+    "message": "ganztägig"
+  },
+  "week": {
+    "message": "KW $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "readOnly": {
+    "message": "„$NAME$“ ist schreibgeschützt. Neue Termine bitte in einem anderen Kalender anlegen.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "noCalendars": {
+    "message": "Wählen Sie oben über „Kalender auswählen“ die Kalender aus, die nebeneinander erscheinen sollen."
+  },
+  "noCalendarsAtAll": {
+    "message": "In Thunderbird ist noch kein Kalender eingerichtet. Legen Sie zuerst im Kalender-Tab einen Kalender an, z. B. per CalDAV."
+  },
+  "loadError": {
+    "message": "Termine konnten nicht geladen werden: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "openError": {
+    "message": "Termin konnte nicht geöffnet werden: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "createHint": {
+    "message": "Klick: Vorschau · Doppelklick: öffnen · Rechtsklick: Menü · Entf: löschen · Ziehen: verschieben (Strg: kopieren) · Freie Fläche klicken/aufziehen: neuer Termin · Strg+Z rückgängig"
+  },
+  "overlay": {
+    "message": "Überlagern"
+  },
+  "overlayTitle": {
+    "message": "Überlagerte Ansicht. Neue Termine landen im markierten Kalender – zum Ändern einen Namen anklicken."
+  },
+  "moveMeeting": {
+    "message": "Besprechungen mit Teilnehmern bitte im Termindialog verschieben, damit alle Teilnehmer eine Aktualisierung erhalten."
+  },
+  "moveError": {
+    "message": "Termin konnte nicht verschoben werden: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "moved": {
+    "message": "Termin verschoben – Strg+Z macht es rückgängig."
+  },
+  "modeSchedule": {
+    "message": "Zeitplan"
+  },
+  "findFree": {
+    "message": "Freie Zeit finden"
+  },
+  "findIntro": {
+    "message": "Gesucht wird im angezeigten Zeitraum, innerhalb der Arbeitszeit und über alle gewählten Kalender."
+  },
+  "findDuration": {
+    "message": "Dauer"
+  },
+  "minutes": {
+    "message": "$N$ Min.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "findNeedRoom": {
+    "message": "Raum benötigt"
+  },
+  "findReserve": {
+    "message": "Raum gleich mitreservieren"
+  },
+  "findNoRooms": {
+    "message": "Für die Raumsuche Raumkalender auswählen und in den Einstellungen als „Raum“ markieren."
+  },
+  "findSearch": {
+    "message": "Suchen"
+  },
+  "findNone": {
+    "message": "Kein gemeinsamer freier Termin im angezeigten Zeitraum. Zeitraum wechseln oder kürzere Dauer wählen."
+  },
+  "findCreate": {
+    "message": "Anlegen"
+  },
+  "noTarget": {
+    "message": "Kein beschreibbarer eigener Kalender ausgewählt."
+  },
+  "reserved": {
+    "message": "Raum „$NAME$“ reserviert. Wenn Sie den Termin verwerfen, löschen Sie die Reservierung im Raumkalender.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "reservedTitle": {
+    "message": "Reserviert"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "setWork": {
+    "message": "Arbeitszeit"
+  },
+  "setTo": {
+    "message": "bis"
+  },
+  "setDays": {
+    "message": "Arbeitstage"
+  },
+  "setDuration": {
+    "message": "Standarddauer neuer Termine"
+  },
+  "setZoom": {
+    "message": "Darstellung"
+  },
+  "zoomS": {
+    "message": "Kompakt"
+  },
+  "zoomM": {
+    "message": "Normal"
+  },
+  "zoomL": {
+    "message": "Groß"
+  },
+  "setPrivate": {
+    "message": "Private Termine von Kollegen nur als „Privat“ anzeigen"
+  },
+  "setRoles": {
+    "message": "Art der Kalender"
+  },
+  "roleOwn": {
+    "message": "Eigener"
+  },
+  "roleColleague": {
+    "message": "Kollege"
+  },
+  "roleRoom": {
+    "message": "Raum"
+  },
+  "privateEvent": {
+    "message": "Privat"
+  },
+  "privateBlocked": {
+    "message": "Dieser Termin ist privat."
+  },
+  "copied": {
+    "message": "Termin kopiert – Strg+Z macht es rückgängig."
+  },
+  "print": {
+    "message": "Drucken"
+  },
+  "jumpTo": {
+    "message": "Gehe zu Datum"
+  },
+  "rooms": {
+    "message": "Räume"
+  },
+  "people": {
+    "message": "Personen"
+  },
+  "up": {
+    "message": "Nach oben"
+  },
+  "down": {
+    "message": "Nach unten"
+  },
+  "close": {
+    "message": "Schließen"
+  },
+  "weekShort": {
+    "message": "KW"
+  },
+  "miniHint": {
+    "message": "Strg + Klick: einzelne Tage wählen · Umschalt + Klick: Zeitraum · Klick auf KW: ganze Woche"
+  },
+  "tooManyDays": {
+    "message": "Es können höchstens $N$ Tage gleichzeitig angezeigt werden.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "setTheme": {
+    "message": "Outlook-Design im Thunderbird-Kalender verwenden"
+  },
+  "movedMeeting": {
+    "message": "Besprechung verschoben – Thunderbird benachrichtigt die Teilnehmer. Strg+Z macht es rückgängig."
+  },
+  "undone": {
+    "message": "Rückgängig gemacht."
+  },
+  "redone": {
+    "message": "Wiederhergestellt."
+  },
+  "nothingToUndo": {
+    "message": "Nichts zum Rückgängigmachen."
+  },
+  "addCalendar": {
+    "message": "＋ Kalender hinzufügen (auch freigegebene von Kollegen)"
+  },
+  "calendarsAdded": {
+    "message": "$N$ neue Kalender hinzugefügt – Art (Eigener/Kollege/Raum) in den Einstellungen festlegen.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "previewOpen": {
+    "message": "Öffnen"
+  },
+  "delete": {
+    "message": "Löschen"
+  },
+  "join": {
+    "message": "Teilnehmen"
+  },
+  "location": {
+    "message": "Ort"
+  },
+  "calendar": {
+    "message": "Kalender"
+  },
+  "showAs": {
+    "message": "Anzeigen als"
+  },
+  "show_busy": {
+    "message": "Gebucht"
+  },
+  "show_tentative": {
+    "message": "Mit Vorbehalt"
+  },
+  "show_free": {
+    "message": "Frei"
+  },
+  "show_oof": {
+    "message": "Abwesend"
+  },
+  "organizer": {
+    "message": "Organisator"
+  },
+  "attendees": {
+    "message": "Teilnehmer"
+  },
+  "accepted": {
+    "message": "Zusagen"
+  },
+  "declined": {
+    "message": "Absagen"
+  },
+  "tentativeP": {
+    "message": "mit Vorbehalt"
+  },
+  "needsAction": {
+    "message": "ausstehend"
+  },
+  "recurring": {
+    "message": "Serientermin"
+  },
+  "menuCategories": {
+    "message": "Kategorien"
+  },
+  "menuNoCategory": {
+    "message": "Alle Kategorien entfernen"
+  },
+  "menuPrivate": {
+    "message": "Privat"
+  },
+  "noCategories": {
+    "message": "Noch keine Kategorien mit Farbe – in Thunderbird unter Einstellungen → Kalender → Kategorien anlegen."
+  },
+  "updated": {
+    "message": "Geändert – Strg+Z macht es rückgängig."
+  },
+  "setColorBy": {
+    "message": "Termine einfärben nach"
+  },
+  "colorByCategory": {
+    "message": "Kategorie (wie Outlook), sonst Kalender"
+  },
+  "colorByCalendar": {
+    "message": "Kalender"
+  },
+  "setTint": {
+    "message": "Farbintensität der Termine"
+  },
+  "tintSoft": {
+    "message": "Dezent (helle Töne)"
+  },
+  "tintMedium": {
+    "message": "Mittel (Outlook)"
+  },
+  "tintFull": {
+    "message": "Vollfarbe (wie die Kalenderliste)"
+  },
+  "feedback": {
+    "message": "Fehler melden oder Idee vorschlagen (GitHub)"
+  },
+  "betaNotice": {
+    "message": "TeamKalender ist eine Beta-Version. Bitte zuerst mit Testterminen ausprobieren und Fehler über „⚙ Einstellungen → Fehler melden“ mitteilen. Danke!"
+  },
+  "hideCalendar": {
+    "message": "Aus der Ansicht ausblenden"
+  },
+  "calendarHidden": {
+    "message": "„$NAME$“ ausgeblendet – über „Kalender auswählen“ wieder einblenden.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  }
+}

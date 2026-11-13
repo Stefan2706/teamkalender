@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. TeamKalender – (c) Stefan Scherer, ts-scherer.com -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="extensionName"></title>
+  <link rel="stylesheet" href="view.css">
+</head>
+<body>
+  <header class="toolbar">
+    <div class="nav">
+      <button id="today" data-i18n="today"></button>
+      <button id="prev" class="icon" data-i18n-title="prev">‹</button>
+      <button id="next" class="icon" data-i18n-title="next">›</button>
+      <button id="jumpBtn" class="icon" data-panel="jump" data-i18n-title="jumpTo">📅</button>
+      <h1 id="label"></h1>
+    </div>
+    <div class="modes" role="radiogroup">
+      <button data-mode="day" data-i18n="modeDay"></button>
+      <button data-mode="workweek" data-i18n="modeWorkweek"></button>
+      <button data-mode="week" data-i18n="modeWeek"></button>
+      <button data-mode="schedule" data-i18n="modeSchedule"></button>
+    </div>
+    <button id="overlay" class="toggle" aria-pressed="false" data-i18n="overlay"></button>
+    <button id="findBtn" data-panel="finder" data-i18n="findFree"></button>
+    <div class="selection">
+      <select id="group"></select>
+      <button id="pickerBtn" data-panel="picker" data-i18n="calendars"></button>
+      <button id="settingsBtn" class="icon" data-panel="settings" data-i18n-title="settings">⚙</button>
+      <button id="printBtn" data-i18n="print"></button>
+    </div>
+  </header>
+
+  <section id="picker" class="panel" hidden>
+    <ul id="calList"></ul>
+    <button id="addCalendar" class="link" data-i18n="addCalendar"></button>
+    <div class="groupForm">
+      <input id="groupName" data-i18n-placeholder="groupNamePlaceholder">
+      <button id="groupSave" data-i18n="groupSave"></button>
+    </div>
+    <button id="groupDelete" class="link" data-i18n="groupDelete"></button>
+  </section>
+
+  <section id="finder" class="panel" hidden>
+    <p class="intro" data-i18n="findIntro"></p>
+    <div class="row">
+      <label for="findDuration" data-i18n="findDuration"></label>
+      <select id="findDuration"></select>
+    </div>
+    <label class="check"><input id="findRoom" type="checkbox"> <span data-i18n="findNeedRoom"></span></label>
+    <label class="check"><input id="findReserve" type="checkbox"> <span data-i18n="findReserve"></span></label>
+    <p id="findRoomHint" class="note" data-i18n="findNoRooms" hidden></p>
+    <button id="findSearch" class="primary" data-i18n="findSearch"></button>
+    <ul id="findResults"></ul>
+  </section>
+
+  <section id="settings" class="panel wide" hidden></section>
+
+  <section id="jump" class="panel mini" hidden>
+    <div class="mini-head">
+      <button id="miniPrev" class="icon" data-i18n-title="prev">‹</button>
+      <strong id="miniTitle"></strong>
+      <button id="miniNext" class="icon" data-i18n-title="next">›</button>
+    </div>
+    <table id="miniGrid"></table>
+    <p class="note mini-note" data-i18n="miniHint"></p>
+    <button id="miniToday" class="link" data-i18n="today"></button>
+  </section>
+
+  <div id="error" class="error" hidden></div>
+  <main id="scroller"><div id="grid"></div></main>
+  <footer class="hint" data-i18n="createHint"></footer>
+  <div id="preview" class="popover" role="dialog" hidden></div>
+  <div id="ctxmenu" class="menu" role="menu" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+  <script src="view.js"></script>
+</body>
+</html>

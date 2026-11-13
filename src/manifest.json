@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "0.9.1",
+  "author": "Stefan Scherer – ts-scherer.com",
+  "homepage_url": "https://github.com/Stefan2706/teamkalender",
+  "default_locale": "de",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "teamkalender@ts-scherer.com",
+      "strict_min_version": "128.0",
+      "update_url": "https://raw.githubusercontent.com/Stefan2706/teamkalender/main/updates.json"
+    }
+  },
+  "icons": {
+    "32": "icons/icon.svg",
+    "64": "icons/icon.svg"
+  },
+  "permissions": [
+    "storage",
+    "menus"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "__MSG_actionTitle__",
+    "default_label": "__MSG_actionLabel__",
+    "default_icon": "icons/icon.svg",
+    "allowed_spaces": [
+      "mail",
+      "calendar",
+      "tasks",
+      "addressbook"
+    ]
+  },
+  "experiment_apis": {
+    "sbsCalendar": {
+      "schema": "experiment/schema.json",
+      "parent": {
+        "scopes": [
+          "addon_parent"
+        ],
+        "paths": [
+          [
+            "sbsCalendar"
+          ]
+        ],
+        "script": "experiment/implementation.js"
+      }
+    }
+  }
+}

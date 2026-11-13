@@ -1,0 +1,28 @@
+{
+  "addons": {
+    "teamkalender@ts-scherer.com": {
+      "updates": [
+        {
+          "version": "0.9.0",
+          "update_link": "https://github.com/Stefan2706/teamkalender/releases/download/v0.9.0/teamkalender-0.9.0.xpi",
+          "update_hash": "sha256:4491dfae58d4b0c1fe1c0f871da5961e98db6c365fe56e8b8962ece70ab417c3",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "128.0"
+            }
+          }
+        },
+        {
+          "version": "0.9.1",
+          "update_link": "https://github.com/Stefan2706/teamkalender/releases/download/v0.9.1/teamkalender-0.9.1.xpi",
+          "update_hash": "sha256:60355a8ac3960414f367ad4e2070f7fcff4bbf42ce3b417074776bd0d12a7670",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "128.0"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

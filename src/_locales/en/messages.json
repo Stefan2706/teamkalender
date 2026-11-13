@@ -1,0 +1,387 @@
+{
+  "extensionName": {
+    "message": "Team Calendar"
+  },
+  "extensionDescription": {
+    "message": "Colleagues’ and room calendars side by side, schedule view, free-time finder, event preview and an Outlook-style calendar design – for Thunderbird with CalDAV (Nextcloud, Mailcow/SOGo and more)."
+  },
+  "actionTitle": {
+    "message": "Open Team Calendar"
+  },
+  "actionLabel": {
+    "message": "Team Calendar"
+  },
+  "today": {
+    "message": "Today"
+  },
+  "prev": {
+    "message": "Back"
+  },
+  "next": {
+    "message": "Forward"
+  },
+  "modeDay": {
+    "message": "Day"
+  },
+  "modeWorkweek": {
+    "message": "Work week"
+  },
+  "modeWeek": {
+    "message": "Week"
+  },
+  "calendars": {
+    "message": "Choose calendars"
+  },
+  "groupNone": {
+    "message": "Saved groups"
+  },
+  "groupNamePlaceholder": {
+    "message": "Group name"
+  },
+  "groupSave": {
+    "message": "Save selection as group"
+  },
+  "groupDelete": {
+    "message": "Delete group"
+  },
+  "groupSaved": {
+    "message": "Group “$NAME$” saved.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "allDay": {
+    "message": "all day"
+  },
+  "week": {
+    "message": "Week $NUM$",
+    "placeholders": {
+      "num": {
+        "content": "$1"
+      }
+    }
+  },
+  "readOnly": {
+    "message": "“$NAME$” is read-only. Please create new events in another calendar.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "noCalendars": {
+    "message": "Use “Choose calendars” above to pick the calendars you want to see side by side."
+  },
+  "noCalendarsAtAll": {
+    "message": "No calendar is set up in Thunderbird yet. Add one in the calendar tab first, for example via CalDAV."
+  },
+  "loadError": {
+    "message": "Events could not be loaded: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "openError": {
+    "message": "Event could not be opened: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "createHint": {
+    "message": "Click: preview · double-click: open · right-click: menu · Del: delete · drag: move (Ctrl: copy) · click/drag empty space: new event · Ctrl+Z undo"
+  },
+  "overlay": {
+    "message": "Overlay"
+  },
+  "overlayTitle": {
+    "message": "Overlay view. New events go into the marked calendar – click a name to change it."
+  },
+  "moveMeeting": {
+    "message": "Please move meetings with attendees in the event dialog so that all attendees receive an update."
+  },
+  "moveError": {
+    "message": "Event could not be moved: $ERR$",
+    "placeholders": {
+      "err": {
+        "content": "$1"
+      }
+    }
+  },
+  "moved": {
+    "message": "Event moved – Ctrl+Z undoes it."
+  },
+  "modeSchedule": {
+    "message": "Schedule"
+  },
+  "findFree": {
+    "message": "Find free time"
+  },
+  "findIntro": {
+    "message": "Searches the displayed period, within working hours, across all selected calendars."
+  },
+  "findDuration": {
+    "message": "Duration"
+  },
+  "minutes": {
+    "message": "$N$ min",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "findNeedRoom": {
+    "message": "Room required"
+  },
+  "findReserve": {
+    "message": "Reserve the room right away"
+  },
+  "findNoRooms": {
+    "message": "To search for rooms, select room calendars and mark them as “Room” in the settings."
+  },
+  "findSearch": {
+    "message": "Search"
+  },
+  "findNone": {
+    "message": "No common free slot in the displayed period. Change the period or choose a shorter duration."
+  },
+  "findCreate": {
+    "message": "Create"
+  },
+  "noTarget": {
+    "message": "No writable calendar of your own is selected."
+  },
+  "reserved": {
+    "message": "Room “$NAME$” reserved. If you discard the event, delete the reservation in the room calendar.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  },
+  "reservedTitle": {
+    "message": "Reserved"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "setWork": {
+    "message": "Working hours"
+  },
+  "setTo": {
+    "message": "to"
+  },
+  "setDays": {
+    "message": "Working days"
+  },
+  "setDuration": {
+    "message": "Default duration of new events"
+  },
+  "setZoom": {
+    "message": "Display"
+  },
+  "zoomS": {
+    "message": "Compact"
+  },
+  "zoomM": {
+    "message": "Normal"
+  },
+  "zoomL": {
+    "message": "Large"
+  },
+  "setPrivate": {
+    "message": "Show colleagues’ private events only as “Private”"
+  },
+  "setRoles": {
+    "message": "Type of calendar"
+  },
+  "roleOwn": {
+    "message": "Mine"
+  },
+  "roleColleague": {
+    "message": "Colleague"
+  },
+  "roleRoom": {
+    "message": "Room"
+  },
+  "privateEvent": {
+    "message": "Private"
+  },
+  "privateBlocked": {
+    "message": "This event is private."
+  },
+  "copied": {
+    "message": "Event copied – Ctrl+Z undoes it."
+  },
+  "print": {
+    "message": "Print"
+  },
+  "jumpTo": {
+    "message": "Go to date"
+  },
+  "rooms": {
+    "message": "Rooms"
+  },
+  "people": {
+    "message": "People"
+  },
+  "up": {
+    "message": "Move up"
+  },
+  "down": {
+    "message": "Move down"
+  },
+  "close": {
+    "message": "Close"
+  },
+  "weekShort": {
+    "message": "Wk"
+  },
+  "miniHint": {
+    "message": "Ctrl + click: pick individual days · Shift + click: range · click a week number: whole week"
+  },
+  "tooManyDays": {
+    "message": "At most $N$ days can be shown at once.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "setTheme": {
+    "message": "Use Outlook design in the Thunderbird calendar"
+  },
+  "movedMeeting": {
+    "message": "Meeting moved – Thunderbird notifies the attendees. Ctrl+Z undoes it."
+  },
+  "undone": {
+    "message": "Undone."
+  },
+  "redone": {
+    "message": "Redone."
+  },
+  "nothingToUndo": {
+    "message": "Nothing to undo."
+  },
+  "addCalendar": {
+    "message": "+ Add calendar (including ones shared by colleagues)"
+  },
+  "calendarsAdded": {
+    "message": "$N$ new calendars added – set their type (mine/colleague/room) in the settings.",
+    "placeholders": {
+      "n": {
+        "content": "$1"
+      }
+    }
+  },
+  "previewOpen": {
+    "message": "Open"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "join": {
+    "message": "Join"
+  },
+  "location": {
+    "message": "Location"
+  },
+  "calendar": {
+    "message": "Calendar"
+  },
+  "showAs": {
+    "message": "Show as"
+  },
+  "show_busy": {
+    "message": "Busy"
+  },
+  "show_tentative": {
+    "message": "Tentative"
+  },
+  "show_free": {
+    "message": "Free"
+  },
+  "show_oof": {
+    "message": "Out of office"
+  },
+  "organizer": {
+    "message": "Organizer"
+  },
+  "attendees": {
+    "message": "Attendees"
+  },
+  "accepted": {
+    "message": "accepted"
+  },
+  "declined": {
+    "message": "declined"
+  },
+  "tentativeP": {
+    "message": "tentative"
+  },
+  "needsAction": {
+    "message": "pending"
+  },
+  "recurring": {
+    "message": "Recurring"
+  },
+  "menuCategories": {
+    "message": "Categories"
+  },
+  "menuNoCategory": {
+    "message": "Remove all categories"
+  },
+  "menuPrivate": {
+    "message": "Private"
+  },
+  "noCategories": {
+    "message": "No categories with colours yet – create them in Thunderbird under Settings → Calendar → Categories."
+  },
+  "updated": {
+    "message": "Changed – Ctrl+Z undoes it."
+  },
+  "setColorBy": {
+    "message": "Colour events by"
+  },
+  "colorByCategory": {
+    "message": "Category (like Outlook), otherwise calendar"
+  },
+  "colorByCalendar": {
+    "message": "Calendar"
+  },
+  "setTint": {
+    "message": "Event colour intensity"
+  },
+  "tintSoft": {
+    "message": "Subtle (light tints)"
+  },
+  "tintMedium": {
+    "message": "Medium (Outlook)"
+  },
+  "tintFull": {
+    "message": "Full colour (like the calendar list)"
+  },
+  "feedback": {
+    "message": "Report a bug or suggest an idea (GitHub)"
+  },
+  "betaNotice": {
+    "message": "Team Calendar is a beta version. Please try it with test events first and report problems via “⚙ Settings → Report a bug”. Thank you!"
+  },
+  "hideCalendar": {
+    "message": "Hide from view"
+  },
+  "calendarHidden": {
+    "message": "“$NAME$” hidden – show it again via “Choose calendars”.",
+    "placeholders": {
+      "name": {
+        "content": "$1"
+      }
+    }
+  }
+}
