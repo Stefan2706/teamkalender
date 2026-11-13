@@ -15,7 +15,7 @@
         {
           "version": "0.9.1",
           "update_link": "https://github.com/Stefan2706/teamkalender/releases/download/v0.9.1/teamkalender-0.9.1.xpi",
-          "update_hash": "sha256:637f486e155aad806b87160ca2274e6fbc193346763836618f49e4236918bdf0",
+          "update_hash": "sha256:4ba189b998db0f1a39fab92f284485adeaa6d593397ed53624c83c5339e7b6f2",
           "applications": {
             "gecko": {
               "strict_min_version": "128.0"
