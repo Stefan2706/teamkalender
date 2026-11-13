@@ -10,6 +10,23 @@ e.g. CalDAV from **Nextcloud** or **Mailcow/SOGo**.
 > ⚠️ **Beta.** Please try it with test events first. Report bugs and ideas as an
 > [issue](https://github.com/Stefan2706/teamkalender/issues/new/choose).
 
+## Screenshots
+
+**Colleagues’ calendars side by side**
+![Side by side](docs/screenshots/01-nebeneinander.png)
+
+**Schedule view with rooms and “Find free time”**
+![Schedule with rooms](docs/screenshots/02-zeitplan-raeume.png)
+
+| Event preview with “Join” | Right-click menu |
+|---|---|
+| ![Event preview](docs/screenshots/03-vorschau.png) | ![Context menu](docs/screenshots/04-kontextmenue.png) |
+
+**Outlook-style design for Thunderbird’s calendar**
+![Outlook-style design](docs/screenshots/06-outlook-design.png)
+
+*Screenshots show the German user interface; the add-on is also available in English.*
+
 ## Features
 - **Side by side, overlay and schedule view** – calendars in their own columns,
   merged into one view, or as rows on a horizontal timeline

@@ -14,7 +14,7 @@ const HOUR_MS = 3600000;
 const SNAP_CREATE = 30;
 const SNAP_DRAG = 15;
 const ZOOM = { s: 36, m: 48, l: 64 };
-const ROW_H = 44;
+const ROW_H = 52;
 const LABEL_W = 220;
 const MAX_CUSTOM = 14;
 
@@ -80,7 +80,13 @@ function visibleDays() {
 }
 const isWorkDay = d => state.settings.workDays.includes(d.getDay());
 const hourPx = () => ZOOM[state.settings.zoom] || 48;
-const hourW = () => Math.round(hourPx() * 1.75);
+// Stundenbreite im Zeitplan: mindestens Grundbreite, sonst Fensterbreite ausnutzen
+const baseHourW = () => Math.round(hourPx() * 1.75);
+function hourW() {
+  if (state.mode !== "schedule") return baseHourW();
+  const avail = ($("#scroller") ? $("#scroller").clientWidth : 0) - LABEL_W - 4;
+  return Math.max(baseHourW(), Math.floor(avail / 24));
+}
 const snap = (m, step) => Math.round(m / step) * step;
 const timeRange = (s, e) => `${fmtTime.format(new Date(s))}–${fmtTime.format(new Date(e))}`;
 
@@ -671,6 +677,7 @@ function renderGrid(days, cals) {
 
 function renderSchedule(cals, day) {
   const hw = hourW();
+  document.documentElement.style.setProperty("--hourw", `${hw}px`);
   const width = 24 * hw;
   const dayStart = day.getTime();
   const dayEnd = addDays(day, 1).getTime();
@@ -897,6 +904,11 @@ async function onPointerUp(e) {
   await refresh();
 }
 
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { if (state.mode === "schedule") { state.scroll = null; render(); } }, 150);
+});
 window.addEventListener("pointermove", onPointerMove);
 window.addEventListener("pointerup", onPointerUp);
 window.addEventListener("pointercancel", () => { endDragging(); drag = null; });
@@ -1099,15 +1111,39 @@ function showMenu(it, x, y) {
       item(t("show_" + sa), () => updateEvent(it, { showAs: sa }), { checked: (it.showAs || "busy") === sa });
     }
     sep();
-    heading(t("menuCategories"));
+    // Kategorien: zugewiesene direkt sichtbar, alle weiteren aufklappbar
     const cats = [...state.categories.keys()];
-    if (!cats.length) menu.append(el("div", { class: "menu-note" }, t("noCategories")));
-    for (const name of cats) {
-      const has = (it.categories || []).includes(name);
-      item(name, () => updateEvent(it, { categories: has ? it.categories.filter(c => c !== name) : [...(it.categories || []), name] }),
-        { checked: has, color: state.categories.get(name) });
+    const assigned = it.categories || [];
+    const toggleCat = name => {
+      const has = assigned.includes(name);
+      updateEvent(it, { categories: has ? assigned.filter(c => c !== name) : [...assigned, name] });
+    };
+    if (!cats.length) {
+      heading(t("menuCategories"));
+      menu.append(el("div", { class: "menu-note" }, t("noCategories")));
+    } else {
+      const more = el("button", { role: "menuitem", class: "submenu" }, `${t("menuCategories")} …`);
+      const list = el("div", { class: "menu-sub", hidden: "" });
+      for (const name of cats) {
+        const b = el("button", { role: "menuitem", class: assigned.includes(name) ? "checked" : "" });
+        const sw = el("span", { class: "swatch" });
+        sw.style.background = state.categories.get(name);
+        b.append(sw, document.createTextNode(name));
+        b.addEventListener("click", () => { hideMenu(); toggleCat(name); });
+        list.append(b);
+      }
+      more.addEventListener("click", e => {
+        e.stopPropagation();
+        list.hidden = !list.hidden;
+        more.classList.toggle("open", !list.hidden);
+        repositionMenu();
+      });
+      for (const name of assigned.filter(n => state.categories.has(n))) {
+        item(name, () => toggleCat(name), { checked: true, color: state.categories.get(name) });
+      }
+      menu.append(more, list);
+      if (assigned.length) item(t("menuNoCategory"), () => updateEvent(it, { categories: [] }));
     }
-    if ((it.categories || []).length) item(t("menuNoCategory"), () => updateEvent(it, { categories: [] }));
     sep();
     const isPrivate = it.privacy === "PRIVATE" || it.privacy === "CONFIDENTIAL";
     item(t("menuPrivate"), () => updateEvent(it, { privacy: !isPrivate }), { checked: isPrivate });
@@ -1115,14 +1151,22 @@ function showMenu(it, x, y) {
     item(t("delete"), () => deleteEvent(it));
   }
   menu.hidden = false;
+  menu.dataset.x = x;
+  menu.dataset.y = y;
+  repositionMenu();
+  const first = menu.querySelector("button:not([disabled])");
+  if (first) first.focus();
+}
+function repositionMenu() {
+  const menu = $("#ctxmenu");
+  const x = Number(menu.dataset.x);
+  const y = Number(menu.dataset.y);
   const w = menu.offsetWidth;
   const h = menu.offsetHeight;
   Object.assign(menu.style, {
     left: `${Math.min(x, window.innerWidth - w - 6)}px`,
     top: `${Math.max(6, Math.min(y, window.innerHeight - h - 6))}px`,
   });
-  const first = menu.querySelector("button:not([disabled])");
-  if (first) first.focus();
 }
 function hideMenu() { $("#ctxmenu").hidden = true; }
 

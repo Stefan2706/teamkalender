@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.3
+- Screenshots in README und Beta-Seite
+- Kontextmenü kompakter: Kategorien aufklappbar, zugewiesene direkt sichtbar
+- Zeitplan nutzt die ganze Fensterbreite, Zeilen etwas höher und besser lesbar
+
 ## 0.9.2
 - Neu: Kalenderfarbe (Palette) und Kalendername direkt in den TeamKalender-
   Einstellungen ändern – gilt auch für Thunderbird

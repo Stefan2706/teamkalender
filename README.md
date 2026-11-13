@@ -11,6 +11,26 @@ Thunderbird eingerichtet sind, z. B. CalDAV von **Nextcloud** oder
 > ⚠️ **Beta-Version.** Bitte zuerst mit Testterminen ausprobieren. Fehler und
 > Ideen gerne als [Issue](https://github.com/Stefan2706/teamkalender/issues/new/choose) melden.
 
+## Screenshots
+
+**Kalender von Kollegen nebeneinander**
+![Kalender nebeneinander](docs/screenshots/01-nebeneinander.png)
+
+**Zeitplan mit Räumen und „Freie Zeit finden“**
+![Zeitplan mit Räumen](docs/screenshots/02-zeitplan-raeume.png)
+
+| Termin-Vorschau mit „Teilnehmen“ | Rechtsklick-Menü |
+|---|---|
+| ![Termin-Vorschau](docs/screenshots/03-vorschau.png) | ![Kontextmenü](docs/screenshots/04-kontextmenue.png) |
+
+**Outlook-Design für den Thunderbird-Kalender**
+![Outlook-Design](docs/screenshots/06-outlook-design.png)
+
+<details><summary>Einstellungen: Farben, Namen und Art der Kalender</summary>
+
+![Einstellungen](docs/screenshots/05-einstellungen.png)
+</details>
+
 ## Funktionen
 - **Nebeneinander, Überlagern und Zeitplan** – Kalender in eigenen Spalten, in
   einer gemeinsamen Ansicht oder als Zeilen mit waagerechter Zeitachse

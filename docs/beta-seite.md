@@ -23,7 +23,11 @@ und ohne Datenübertragung an Dritte.
 - **Farbkategorien, „Anzeigen als“ und private Termine** wie in Outlook
 - **Outlook-Design** für den gesamten Thunderbird-Kalender
 
-[Screenshot Zeitplan] [Screenshot Termin-Vorschau] [Screenshot Outlook-Design]
+Bilder für die Seite (liegen in `docs/screenshots/`, direkte Links nach dem Hochladen):
+- `https://raw.githubusercontent.com/Stefan2706/teamkalender/main/docs/screenshots/01-nebeneinander.png`
+- `https://raw.githubusercontent.com/Stefan2706/teamkalender/main/docs/screenshots/02-zeitplan-raeume.png`
+- `https://raw.githubusercontent.com/Stefan2706/teamkalender/main/docs/screenshots/03-vorschau.png`
+- `https://raw.githubusercontent.com/Stefan2706/teamkalender/main/docs/screenshots/06-outlook-design.png`
 
 ### In zwei Minuten installiert
 1. Neueste Version herunterladen: **github.com/Stefan2706/teamkalender/releases**
