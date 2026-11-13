@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.9.2
+- Neu: Kalenderfarbe (Palette) und Kalendername direkt in den TeamKalender-
+  Einstellungen ändern – gilt auch für Thunderbird
+- Behoben: Bei Terminen mit langem Link im Ort wurde der Titel verdeckt
+- Besprechungslinks erscheinen im Termin als „🎥 Online-Besprechung“, andere
+  Links nur mit der Domain
+
 ## 0.9.1
 - Einzelne Kalender per × im Spaltenkopf, in der Legende (Überlagern) und im
   Zeitplan aus der Ansicht ausblenden

@@ -264,3 +264,14 @@ button.x {
 button.x:hover, button.x:focus-visible { opacity: 1; color: var(--fg); background: color-mix(in srgb, var(--fg) 10%, transparent); }
 .s-label button.x { opacity: 0; }
 .s-label:hover button.x, .s-label button.x:focus-visible { opacity: 0.8; }
+
+/* Titel hat Vorrang vor Uhrzeit und Ort, lange Links brechen um */
+.col .ev .tm, .col .ev .ti { flex: none; }
+.col .ev .lo { flex: 1 1 auto; min-height: 0; overflow: hidden; overflow-wrap: anywhere; }
+
+/* Kalenderfarbe und -name in den Einstellungen */
+.roles .swatch.pick { width: 16px; height: 16px; cursor: pointer; box-shadow: 0 0 0 1px var(--line-strong); }
+.roles .calname { flex: 1; min-width: 0; padding: 2px 6px; }
+.roles li.palette { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 0 8px 24px; }
+.swatch.big { width: 22px; height: 22px; border: 2px solid transparent; border-radius: 5px; padding: 0; cursor: pointer; }
+.swatch.big.current, .swatch.big:hover { border-color: var(--fg); }

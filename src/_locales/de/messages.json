@@ -199,7 +199,7 @@
     "message": "Private Termine von Kollegen nur als „Privat“ anzeigen"
   },
   "setRoles": {
-    "message": "Art der Kalender"
+    "message": "Kalender: Farbe, Name und Art"
   },
   "roleOwn": {
     "message": "Eigener"
@@ -383,5 +383,14 @@
         "content": "$1"
       }
     }
+  },
+  "onlineMeeting": {
+    "message": "Online-Besprechung"
+  },
+  "changeColor": {
+    "message": "Farbe ändern (gilt auch in Thunderbird)"
+  },
+  "renameCalendar": {
+    "message": "Kalender umbenennen (gilt auch in Thunderbird)"
   }
 }

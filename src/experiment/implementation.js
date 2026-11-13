@@ -280,6 +280,13 @@ var sbsCalendar = class extends ExtensionCommon.ExtensionAPI {
           }
         },
 
+        // Farbe und Name eines Kalenders direkt in Thunderbird ändern
+        async setCalendarProps(calendarId, props) {
+          const calendar = findCalendar(calendarId);
+          if (props.color) calendar.setProperty("color", props.color);
+          if (props.name && props.name.trim()) calendar.name = props.name.trim();
+        },
+
         async getCategories() {
           return categoryList();
         },

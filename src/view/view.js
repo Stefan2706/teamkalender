@@ -363,10 +363,41 @@ function renderSettings() {
       apply();
       updateFinderControls();
     });
-    li.append(sw, el("span", { class: "name", title: c.name }, c.name), sel);
+    // Farbe per Palette (ohne Systemdialog) und Name direkt hier ändern
+    sw.classList.add("pick");
+    sw.setAttribute("role", "button");
+    sw.setAttribute("tabindex", "0");
+    sw.title = t("changeColor");
+    sw.addEventListener("click", e => { e.stopPropagation(); togglePalette(li, c); });
+    const name = el("input", { class: "calname", value: c.name, title: t("renameCalendar") });
+    name.addEventListener("change", () => {
+      if (!name.value.trim() || name.value.trim() === c.name) return;
+      api.setCalendarProps(c.id, { name: name.value.trim() }).catch(e => toast(t("openError", errText(e))));
+    });
+    li.append(sw, name, sel);
     roles.append(li);
   }
   box.append(roles);
+}
+
+const PALETTE = ["#2f6fb5", "#0f9d9a", "#2e9d5a", "#7cb342", "#e0a800", "#e08a1e", "#d9534f", "#c2185b", "#8e44ad", "#5c6bc0", "#6d4c41", "#78909c"];
+function togglePalette(li, cal) {
+  const open = li.nextElementSibling && li.nextElementSibling.classList.contains("palette");
+  for (const p of document.querySelectorAll(".palette")) p.remove();
+  if (open) return;
+  const pal = el("li", { class: "palette" });
+  for (const color of PALETTE) {
+    const b = el("button", { class: "swatch big" + (color === cal.color ? " current" : ""), title: color, "aria-label": color });
+    b.style.background = color;
+    b.addEventListener("click", e => {
+      e.stopPropagation();
+      api.setCalendarProps(cal.id, { color })
+        .then(() => { cal.color = color; pal.remove(); renderSettings(); render(); })
+        .catch(err => toast(t("openError", errText(err))));
+    });
+    pal.append(b);
+  }
+  li.after(pal);
 }
 
 function applyZoom() {
@@ -413,6 +444,14 @@ function openItem(it) {
   api.openItem(it.calendarId, it.id, it.recurrenceId || "").catch(e => toast(t("openError", errText(e))));
 }
 
+// Links im Ort kurz anzeigen: Besprechungslink als „Online-Besprechung“, sonst nur die Domain
+function shortLocation(loc) {
+  const m = (loc || "").match(/https?:\/\/([^/\s]+)[^\s]*/i);
+  if (!m) return loc;
+  if (MEETING_RE.test(loc)) return `🎥 ${t("onlineMeeting")}`;
+  return loc.replace(m[0], m[1]);
+}
+
 // Termin-Kasten; axis "y" = Tag/Woche, "x" = Zeitplan
 function eventBox(seg, dayStart, axis) {
   const { it } = seg;
@@ -446,7 +485,7 @@ function eventBox(seg, dayStart, axis) {
   if (state.overlay || axis === "x") tip.push(cal.name);
   box.title = tip.filter(Boolean).join("\n");
   box.append(el("div", { class: "tm" }, when), el("div", { class: "ti" }, shown.title));
-  if (shown.location && axis === "y") box.append(el("div", { class: "lo" }, shown.location));
+  if (shown.location && axis === "y") box.append(el("div", { class: "lo" }, shortLocation(shown.location)));
   const grip = el("div", { class: "grip" });
   box.append(grip);
 

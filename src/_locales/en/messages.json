@@ -199,7 +199,7 @@
     "message": "Show colleagues’ private events only as “Private”"
   },
   "setRoles": {
-    "message": "Type of calendar"
+    "message": "Calendars: colour, name and type"
   },
   "roleOwn": {
     "message": "Mine"
@@ -383,5 +383,14 @@
         "content": "$1"
       }
     }
+  },
+  "onlineMeeting": {
+    "message": "Online meeting"
+  },
+  "changeColor": {
+    "message": "Change colour (also in Thunderbird)"
+  },
+  "renameCalendar": {
+    "message": "Rename calendar (also in Thunderbird)"
   }
 }

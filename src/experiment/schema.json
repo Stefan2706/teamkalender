@@ -305,6 +305,31 @@
         "type": "function",
         "async": true,
         "parameters": []
+      },
+      {
+        "name": "setCalendarProps",
+        "type": "function",
+        "async": true,
+        "parameters": [
+          {
+            "name": "calendarId",
+            "type": "string"
+          },
+          {
+            "name": "props",
+            "type": "object",
+            "properties": {
+              "color": {
+                "type": "string",
+                "optional": true
+              },
+              "name": {
+                "type": "string",
+                "optional": true
+              }
+            }
+          }
+        ]
       }
     ],
     "events": [
